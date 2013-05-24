@@ -7,7 +7,6 @@ import java.awt.Shape; // general class for shapes
 import java.awt.geom.Point2D; 
 import java.awt.geom.Line2D; 
 import java.awt.geom.Ellipse2D;
-//import java.awt.Ellipse;
 import java.awt.geom.PathIterator;
 import java.awt.geom.AffineTransform;
 

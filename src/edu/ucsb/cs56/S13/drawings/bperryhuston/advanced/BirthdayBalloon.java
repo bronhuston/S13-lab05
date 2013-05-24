@@ -50,7 +50,7 @@ public class BirthdayBalloon extends Balloon implements Shape
         
         
 	
-	// add the message to the balloon
+	// add the present to the balloon
 	// Look up the meaning of the second parameter of append
 	// (Hint--is a method of "GeneralPath")
 
