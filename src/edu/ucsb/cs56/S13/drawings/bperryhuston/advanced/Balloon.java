@@ -6,8 +6,8 @@ import java.awt.Shape; // general class for shapes
 // all imports below this line needed if you are implementing Shape
 import java.awt.geom.Point2D; 
 import java.awt.geom.Line2D; 
-import java.awt.geom.Rectangle2D;
-import java.awt.Rectangle;
+import java.awt.geom.Ellipse2D;
+//import java.awt.Ellipse;
 import java.awt.geom.PathIterator;
 import java.awt.geom.AffineTransform;
 
@@ -28,8 +28,8 @@ public class Balloon extends GeneralPathWrapper implements Shape
     /**
        Constructor
 
-       @param x  x coord of center of the Balloon
-       @param y  y coord of center of the Balloon
+       @param x  x coord of upper left corner of the Balloon
+       @param y  y coord of upper left corner of the Balloon
        @param width width of the Balloon
        @param height height of the Balloon
      */
@@ -42,16 +42,21 @@ public class Balloon extends GeneralPathWrapper implements Shape
         // hard coded a particular drawing, this may be an easier
         // way.
         
-        
+        double balloon_height = 0.25 * height;
+       
         
         // Make the balloon part
-        
+        Ellipse2D.Double ball =
+            new Ellipse2D.Double(x, y, width, balloon_height);
         
                           
         // make the ribbon.   Remember that y goes DOWN the page,
         // so we ADD to y to get a "lower" value on the screen
         
-    
+        Line2D.Double ribbon =
+            new Line2D.Double(x + width/2.0, y + balloon_height,
+                              x + width/2.0, y + height);
+
 
         // put the whole Balloon together
        
